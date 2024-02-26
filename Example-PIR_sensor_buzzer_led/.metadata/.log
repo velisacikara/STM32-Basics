@@ -1,0 +1,40 @@
+!SESSION 2023-03-26 15:23:29.044 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=tr_TR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-03-26 15:23:56.980
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-03-26 15:23:57.064
+!MESSAGE Log4j initialized with config file C:\Users\VeliSacikara\Documents\STM32_Projeler\Example-PIR_sensor_buzzer_led\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-03-26 15:24:01.385
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-26 15:26:39.432
+!MESSAGE Indexed 'Example-PIR_sensor_buzzer_led' (19 sources, 81 headers) in 5.11 sec: 4,376 declarations; 17,598 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0091%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-26 15:52:05.803
+!MESSAGE Indexed 'Example_PIR_sensor' (21 sources, 107 headers) in 3.41 sec: 8,710 declarations; 29,713 references; 6 unresolved inclusions; 704 syntax errors; 1,105 unresolved names (2.8%)
+!SESSION 2023-03-26 16:14:55.296 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=tr_TR
+Framework arguments:  C:\Users\VeliSacikara\Documents\STM32_Projeler\Example-PIR_sensor_buzzer_led\Example-PIR_sensor_buzzer_led\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\VeliSacikara\Documents\STM32_Projeler\Example-PIR_sensor_buzzer_led\Example-PIR_sensor_buzzer_led\.cproject
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-03-26 16:15:08.370
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-03-26 16:15:08.474
+!MESSAGE Log4j initialized with config file C:\Users\VeliSacikara\Documents\STM32_Projeler\Example-PIR_sensor_buzzer_led\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-03-26 16:15:16.745
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-26 16:15:21.976
+!MESSAGE Indexed 'Example-PIR_sensor_buzzer_led' (19 sources, 106 headers) in 4,91 sec: 8.187 declarations; 30.927 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (%0,37)

@@ -1,0 +1,114 @@
+
+#include "stm32f4xx.h"
+#include "stm32f4_discovery.h"
+
+void CLK_Config()
+{
+	RCC->CR |= 0x00030000;  //HSEON and HSEONRDY ENABLE
+	while(!(RCC->CR & 0x00020000));  //HSEON Ready Flag Wait
+	RCC->CR |= 0x00080000;  // CSS ENABLE
+	RCC->PLLCFGR |= 0x00400000;  // PLL e HSE seçtik
+	RCC->PLLCFGR |= 0x00000004;  // PLL M = 4
+	RCC->PLLCFGR |= 0x0005A000;  // PLL N = 168
+	RCC->PLLCFGR |= 0x00000000;  // PLL P = 2
+	RCC->CFGR |= 0x00000000;  //AHB Prescaler = 1
+	RCC->CFGR |= 0x00080000;  //APB2 Prescaler = 2
+	RCC->CFGR |= 0x00001400;  //APB1 Prescaler = 4
+	RCC->CIR |= 0x00080000;  //HSERDY Flag clear
+	RCC->CIR |= 0x00800000;  //CSS Flag clear
+}
+
+void GPIO_Config()
+{
+	RCC->AHB1ENR = 0x00000009; // GPIOA ve GPIOD aktif
+	GPIOD->MODER = 0x55000000;  // GPIOD PIN 12..15 output
+	GPIOD->OTYPER = 0x00000000; // GPIOD pushpull
+	GPIOD->OSPEEDR = 0xFF000000; // 100 MHz HIZ
+	GPIOD->PUPDR = 0x00000000; // NOPULL
+}
+
+void EXTI_Config()
+{
+	RCC->APB2ENR = 0x00004000;  // SYSCFG (EXTI) aktif
+
+	SYSCFG->EXTICR[0] = 0x00000000;
+	SYSCFG->EXTICR[1] = 0x00000000;  // eklenip eklenmeyeceðinden emin deðilim
+	SYSCFG->EXTICR[2] = 0x00000000;  // eklenip eklenmeyeceðinden emin deðilim
+
+	NVIC_EnableIRQ(EXTI0_IRQn);
+	NVIC_EnableIRQ(EXTI1_IRQn);
+	NVIC_EnableIRQ(EXTI2_IRQn);
+
+	NVIC_SetPriority(EXTI0_IRQn, 0); // Interrupt priority ayarlama
+	NVIC_SetPriority(EXTI1_IRQn, 1);
+	NVIC_SetPriority(EXTI2_IRQn, 2);
+
+	EXTI->IMR = 0x00000007; // PA0, PA1, PA2 aktif (interrupt olarak kullanma, maskeleme)
+	EXTI->RTSR = 0x00000007;  // rising trigger seçtik
+}
+
+void delay(uint32_t time)
+{
+	while(time--);
+}
+
+void EXTI0_IRQHandler()
+{
+	if(EXTI->PR & 0x00000001)  // bayraðýn kalkýp kalkmadýðýný kontrol etme
+	{
+		GPIOD->ODR = 0x00001000;  // sadece 12. led yanacak
+		delay(3360000);
+
+		EXTI->PR = 0x00000001;  // flag temizlenir
+	}
+}
+
+void EXTI1_IRQHandler()
+{
+	if(EXTI->PR & 0x00000002)
+	{
+		GPIOD->ODR = 0x00002000;
+		delay(3360000);
+
+		EXTI->PR = 0x00000002;
+	}
+}
+
+void EXTI2_IRQHandler()
+{
+	if(EXTI->PR & 0x00000004)
+	{
+		GPIOD->ODR = 0x00004000;
+		delay(33600000);
+
+		EXTI->PR = 0x00000004;
+	}
+}
+
+int main(void)
+{
+	CLK_Config();
+	GPIO_Config();
+	EXTI_Config();
+
+
+  while (1)
+  {
+	  GPIOD->ODR = 0x0000F000;  // Baþlangýçta tüm ledler yanýyor olsun.
+  }
+}
+
+
+void EVAL_AUDIO_TransferComplete_CallBack(uint32_t pBuffer, uint32_t Size){
+  /* TODO, implement your code here */
+  return;
+}
+
+/*
+ * Callback used by stm324xg_eval_audio_codec.c.
+ * Refer to stm324xg_eval_audio_codec.h for more info.
+ */
+uint16_t EVAL_AUDIO_GetSampleCallBack(void){
+  /* TODO, implement your code here */
+  return -1;
+}

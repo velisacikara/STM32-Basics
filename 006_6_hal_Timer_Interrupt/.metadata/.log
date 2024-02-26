@@ -1,0 +1,18 @@
+!SESSION 2023-02-22 08:25:34.459 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=tr_TR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-02-22 08:26:29.220
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-02-22 08:26:29.396
+!MESSAGE Log4j initialized with config file C:\Users\VeliSacikara\Documents\STM32_Projeler\006_6_hal_Timer_Interrupt\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-02-22 08:26:36.357
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-02-22 08:29:16.360
+!MESSAGE Indexed '006_6_hal_Timer_Interrupt' (19 sources, 81 headers) in 6.12 sec: 4,376 declarations; 17,598 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0091%)

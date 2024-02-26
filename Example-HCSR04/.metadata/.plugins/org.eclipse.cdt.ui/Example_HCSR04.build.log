@@ -1,0 +1,10 @@
+13:03:37 **** Incremental Build of configuration Debug for project Example_HCSR04 ****
+make -j8 all 
+arm-none-eabi-size   Example_HCSR04.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6480	     20	   1580	   8080	   1f90	Example_HCSR04.elf
+Finished building: default.size.stdout
+ 
+
+13:03:37 Build Finished. 0 errors, 0 warnings. (took 387ms)
+

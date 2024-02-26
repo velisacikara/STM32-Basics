@@ -1,0 +1,10 @@
+21:24:59 **** Incremental Build of configuration Debug for project 005_ADC-DAC_example_hal ****
+make -j8 all 
+arm-none-eabi-size   005_ADC-DAC_example_hal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8748	     20	   1668	  10436	   28c4	005_ADC-DAC_example_hal.elf
+Finished building: default.size.stdout
+ 
+
+21:24:59 Build Finished. 0 errors, 0 warnings. (took 374ms)
+

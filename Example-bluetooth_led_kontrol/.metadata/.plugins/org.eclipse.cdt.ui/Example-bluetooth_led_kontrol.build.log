@@ -1,0 +1,10 @@
+18:54:38 **** Incremental Build of configuration Debug for project Example-bluetooth_led_kontrol ****
+make -j8 all 
+arm-none-eabi-size   Example-bluetooth_led_kontrol.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12356	    120	   1768	  14244	   37a4	Example-bluetooth_led_kontrol.elf
+Finished building: default.size.stdout
+ 
+
+18:54:39 Build Finished. 0 errors, 0 warnings. (took 235ms)
+

@@ -1,0 +1,43 @@
+
+#include "stm32f4xx.h"
+#include "stm32f4_discovery.h"
+
+
+ADC_CommonInitTypeDef ADC_Common_Init_Struct;
+ADC_InitTypeDef ADC_InitStruct;
+
+uint16_t adc_value;
+
+void ADC_Config()
+{
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
+
+	ADC_Common_Init_Struct.ADC_Mode = ADC_Mode_Independent;
+	ADC_Common_Init_Struct.ADC_Prescaler = ADC_Prescaler_Div4;
+
+	ADC_CommonInit(&ADC_Common_Init_Struct);
+
+}
+
+int main(void)
+{
+
+  while (1)
+  {
+
+  }
+}
+
+void EVAL_AUDIO_TransferComplete_CallBack(uint32_t pBuffer, uint32_t Size){
+  /* TODO, implement your code here */
+  return;
+}
+
+/*
+ * Callback used by stm324xg_eval_audio_codec.c.
+ * Refer to stm324xg_eval_audio_codec.h for more info.
+ */
+uint16_t EVAL_AUDIO_GetSampleCallBack(void){
+  /* TODO, implement your code here */
+  return -1;
+}

@@ -1,0 +1,17 @@
+14:00:29 **** Incremental Build of configuration Debug for project 002_buton_led_blink_hal ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "002_buton_led_blink_hal.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\VeliSacikara\Documents\STM32_Projeler\002_buton_led_blink_hal\002_buton_led_blink_hal\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="002_buton_led_blink_hal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 002_buton_led_blink_hal.elf
+ 
+arm-none-eabi-size   002_buton_led_blink_hal.elf 
+arm-none-eabi-objdump -h -S  002_buton_led_blink_hal.elf  > "002_buton_led_blink_hal.list"
+   text	   data	    bss	    dec	    hex	filename
+   6036	     20	   1572	   7628	   1dcc	002_buton_led_blink_hal.elf
+Finished building: default.size.stdout
+ 
+Finished building: 002_buton_led_blink_hal.list
+ 
+
+14:00:30 Build Finished. 0 errors, 0 warnings. (took 1s.281ms)
+
